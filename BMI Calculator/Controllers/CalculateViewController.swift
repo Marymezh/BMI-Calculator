@@ -21,8 +21,11 @@ class CalculateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        weightSlider.value = 100
-        heightSlider.value = 1.5
+        navigationController?.navigationBar.isHidden = true
+        weightSlider.value = 72
+        heightSlider.value = 1.75
+        weightLabel.text = String(weightSlider.value)
+        heightLabel.text = String(heightSlider.value)
     }
 
     @IBAction func heightSliderChanged(_ sender: UISlider) {
@@ -51,7 +54,7 @@ class CalculateViewController: UIViewController {
             destinationVC.bmiValue = calculatorBrain.getBMIValue()
             destinationVC.advice = calculatorBrain.getAdvice()
             destinationVC.color = calculatorBrain.getColor()
- 
+
         }
     }
 
